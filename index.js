@@ -20,21 +20,21 @@ bot.on('message', async (message) => {
 	// Check if message author is bot, if so dont reply
 	if (message.author.bot) return;
 	// Check if message starts with prefix
-    if (!message.content.toLowerCase().startsWith(prefix)) return;
+	if (!message.content.toLowerCase().startsWith(prefix)) return;
 
-    // Gets the content of the message and joins them together, then slices off the prefix
-    const args = message.content
-    .slice(prefix.length)
-    .trim()
-    .split(/ +/g);
+	// Gets the content of the message and joins them together, then slices off the prefix
+	const args = message.content
+		.slice(prefix.length)
+		.trim()
+		.split(/ +/g);
 
-    // Gets the command
-    const command = args.shift().toLowerCase();
+	// Gets the command
+	const command = args.shift().toLowerCase();
 
-    // First command - ping
-    if(command === 'ping') {
-    	message.channel.send('Pong!')
-    }
+	// First command - ping
+	if(command === 'ping') {
+		message.channel.send('Pong!')
+	}
 })
 
 // Login
